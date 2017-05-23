@@ -1,9 +1,19 @@
-<div *ngFor="let p of pokemons">
-  #{{p.id}} - {{p.name}}
-  <img [src]="p.imageUrl" />
-</div>
+<md-card class="example-card" *ngFor="let p of pokemons">
+  <md-card-header>
+    <md-card-title>#{{p.id}}</md-card-title>
+    <md-card-subtitle>{{p.name}}</md-card-subtitle>
+  </md-card-header>
+  <md-card-content>
+    <img md-card-image [src]="p.imageUrl">
+  </md-card-content>
+  <md-card-actions>
+    <button md-button color="accent">LIKE</button>
+  </md-card-actions>
+</md-card>
 
-<input type="button" value="Load More" (click)="loadMorePokemon()" />
+<div class="loadmore-btn">
+  <button md-raised-button (click)="loadMorePokemon()" *ngIf='!isLoading' color="primary">Load More</button>
+</div>
 
 <div *ngIf='isLoading'>
   Loading...
