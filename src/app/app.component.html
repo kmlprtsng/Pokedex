@@ -1,3 +1,10 @@
-<h1>
-  {{title}}
-</h1>
+<div *ngFor="let p of pokemons">
+  #{{p.id}} - {{p.name}}
+  <img [src]="p.imageUrl" />
+</div>
+
+<input type="button" value="Load More" (click)="loadMorePokemon()" />
+
+<div *ngIf='isLoading'>
+  Loading...
+</div>
