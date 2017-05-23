@@ -1,7 +1,7 @@
 <md-card class="example-card" *ngFor="let p of pokemons">
   <md-card-header>
     <md-card-title>#{{p.id}}</md-card-title>
-    <md-card-subtitle>{{p.name}}</md-card-subtitle>
+    <md-card-subtitle>{{p.name | capatilize}}</md-card-subtitle>
   </md-card-header>
   <md-card-content>
     <img md-card-image [src]="p.imageUrl">

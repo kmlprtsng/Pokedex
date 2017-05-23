@@ -7,10 +7,12 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 
 import { AppComponent } from './app.component';
 import { PokedexService } from "app/pokedex.service";
+import { CapatilizePipe } from './capatilize.pipe';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    CapatilizePipe
   ],
   imports: [
     BrowserModule,
