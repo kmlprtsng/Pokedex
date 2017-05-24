@@ -1,4 +1,9 @@
-<md-card class="example-card" *ngFor="let p of pokemons">
+<input type="text" [(ngModel)]="searchKeyword" value="test" />
+<p>
+Search Keyword: {{searchKeyword}}
+</p>
+
+<md-card class="example-card" *ngFor="let p of pokemons | pokemonKeywordFilter: searchKeyword">
   <md-card-header>
     <md-card-title>#{{p.id}}</md-card-title>
     <md-card-subtitle>{{p.name | capatilize}}</md-card-subtitle>

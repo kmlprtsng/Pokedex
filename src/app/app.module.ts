@@ -8,11 +8,13 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { AppComponent } from './app.component';
 import { PokedexService } from "app/pokedex.service";
 import { CapatilizePipe } from './capatilize.pipe';
+import { PokemonKeywordFilterPipe } from './pokemon-keyword-filter.pipe';
 
 @NgModule({
   declarations: [
     AppComponent,
-    CapatilizePipe
+    CapatilizePipe,
+    PokemonKeywordFilterPipe
   ],
   imports: [
     BrowserModule,
