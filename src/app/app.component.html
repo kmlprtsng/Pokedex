@@ -1,7 +1,16 @@
-<input type="text" [(ngModel)]="searchKeyword" value="test" />
-<p>
-Search Keyword: {{searchKeyword}}
-</p>
+<div>
+    <button md-raised-button color="primary">Home</button>
+    <button md-raised-button color="primary">About us</button>
+</div>
+<br />
+
+<h1 class="md-display-1">Home - Pokedex</h1>
+
+<div>
+  <md-input-container class="full-width">
+        <input mdInput placeholder="Search Keyword" [(ngModel)]="searchKeyword" />
+  </md-input-container>
+</div>
 
 <md-card class="example-card" *ngFor="let p of pokemons | pokemonKeywordFilter: searchKeyword">
   <md-card-header>
