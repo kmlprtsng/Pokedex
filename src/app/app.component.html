@@ -1,34 +1,7 @@
 <div>
-    <button md-raised-button color="primary">Home</button>
-    <button md-raised-button color="primary">About us</button>
+    <a md-raised-button color="primary" routerLink="/">Home</a>
+    <a md-raised-button color="primary" routerLink="about-us">About us</a>
 </div>
 <br />
 
-<h1 class="md-display-1">Home - Pokedex</h1>
-
-<div>
-  <md-input-container class="full-width">
-        <input mdInput placeholder="Search Keyword" [(ngModel)]="searchKeyword" />
-  </md-input-container>
-</div>
-
-<md-card class="example-card" *ngFor="let p of pokemons | pokemonKeywordFilter: searchKeyword">
-  <md-card-header>
-    <md-card-title>#{{p.id}}</md-card-title>
-    <md-card-subtitle>{{p.name | capatilize}}</md-card-subtitle>
-  </md-card-header>
-  <md-card-content>
-    <img md-card-image [src]="p.imageUrl">
-  </md-card-content>
-  <md-card-actions>
-    <button md-button color="accent">LIKE</button>
-  </md-card-actions>
-</md-card>
-
-<div class="loadmore-btn">
-  <button md-raised-button (click)="loadMorePokemon()" *ngIf='!isLoading' color="primary">Load More</button>
-</div>
-
-<div *ngIf='isLoading'>
-  Loading...
-</div>
+<router-outlet></router-outlet>
